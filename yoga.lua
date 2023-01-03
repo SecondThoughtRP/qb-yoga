@@ -15,16 +15,16 @@ RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
     }, {}, {}, function()  -- Done
         exports['ps-ui']:Circle(function(success)
             if success then
-                print("success")
+                --print("success")
 		--TriggerServerEvent('hud:server:RelieveStress', 25)
                 QBCore.Functions.Notify("You have a bit less stress", "success") 
                 exports['ps-buffs']:AddStressBuff(40000, 5)				
                 ClearPedTasks(PlayerPedId())
             else
-                print("fail")
-		        ClearPedTasks(PlayerPedId())
+                --print("fail")
+		ClearPedTasks(PlayerPedId())
                 QBCore.Functions.Notify("Just Breathe.....", "error") 
-		        SetPedToRagdollWithFall(ped, 1000, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+		SetPedToRagdollWithFall(ped, 1000, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
             end
         end, 2, 10)
     end)
