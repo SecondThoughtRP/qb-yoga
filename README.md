@@ -1,6 +1,6 @@
 # qb-yoga
 
-#Add to qb-smallresources-client and enjoy
+#Add yoga.lua to qb-smallresources-client and enjoy
 
 A Simple yoga script using ps-ui and buffs.
 
