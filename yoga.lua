@@ -16,7 +16,7 @@ RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
         exports['ps-ui']:Circle(function(success)
             if success then
                 print("success")
-		        --TriggerServerEvent('hud:server:RelieveStress', 25)
+		--TriggerServerEvent('hud:server:RelieveStress', 25)
                 QBCore.Functions.Notify("You have a bit less stress", "success") 
                 exports['ps-buffs']:AddStressBuff(40000, 5)				
                 ClearPedTasks(PlayerPedId())
@@ -35,7 +35,6 @@ exports['qb-target']:AddTargetModel({-1978741854, 2057317573, -232023078}, {
         {
             type = "client",
             event = "qb-smallresources:client:Namaste",
-            --icon = "fas fa-yin-yang",
             targeticon = "fas fa-yin-yang",
             label = "Namaste",
         },
