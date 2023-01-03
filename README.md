@@ -1,4 +1,4 @@
-# STRP-yoga
+# qb-yoga
 
 #Add to qb-smallresources-client and enjoy
 
