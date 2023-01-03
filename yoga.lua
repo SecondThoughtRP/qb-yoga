@@ -1,28 +1,25 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
-    local ped = PlayerPedId()
-    local coords = GetEntityCoords(ped)
     QBCore.Functions.Progressbar('doing_yoga', 'Doing Yoga', 15000, false, false, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
         disableCombat = true,
     }, {
-        animDict = "missfam5_yoga",
-        anim = "i_yogapose_a",
-        flag = 8,
+        TriggerEvent('animations:client:EmoteCommandStart', {"yoga"})
     }, {}, {}, function()  -- Done
         exports['ps-ui']:Circle(function(success)
             if success then
-		ClearPedTasks(PlayerPedId())					
-		--TriggerServerEvent('hud:server:RelieveStress', 25) 
-                exports['ps-buffs']:AddStressBuff(40000, 5)
+	        ClearPedTasks(PlayerPedId())
+	        TriggerServerEvent('hud:server:RelieveStress', math.random(5, 10))
+                exports['ps-buffs']:AddHealthBuff(10000, 5)
 		QBCore.Functions.Notify("You have a bit less stress", "success")					
             else
 		ClearPedTasks(PlayerPedId())
+                ApplyDamageToPed(PlayerPedId(), 5, false)
+		SetPedToRagdollWithFall(PlayerPedId(), 1000, 2000, 1, GetEntityForwardVector(PlayerPedId()), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
                 QBCore.Functions.Notify("Just Breathe.....", "error") 
-		SetPedToRagdollWithFall(ped, 1000, 2000, 1, GetEntityForwardVector(ped), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
             end
         end, 2, 10)
     end)
