@@ -7,13 +7,26 @@ A Simple yoga script using ps-ui and buffs.
 If you don't want to use buffs comment this out (exports['ps-buffs']:AddHealthBuff(10000, 5))
 Feel free to make any improvements!!
 
-DEPENDENCIES: ps-ui https://github.com/Project-Sloth/ps-ui
+DEPENDENCIES: 
 
-Optional: ps-buffs https://github.com/Project-Sloth/ps-buffs
+ps-ui https://github.com/Project-Sloth/ps-ui
+
+qb-target https://github.com/qbcore-framework/qb-target
+
+qb-core https://github.com/qbcore-framework/qb-core
 
 
+Optional: 
 
-Credits: LumioStudio (As I used as a base and added ps-ui and ps-buffs into.)
+ps-buffs https://github.com/Project-Sloth/ps-buffs
+
+ps-objectspawner (for more yoga mats) https://github.com/Project-Sloth/ps-objectspawner
+
+
+Credits: 
+
+LumioStudio (As I used as a base and added ps-ui and ps-buffs into.)
+
 https://github.com/LumioStudio/QBCore-Yoga
 
 
