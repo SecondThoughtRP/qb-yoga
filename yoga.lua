@@ -15,10 +15,10 @@ RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
     }, {}, {}, function()  -- Done
         exports['ps-ui']:Circle(function(success)
             if success then
-		--TriggerServerEvent('hud:server:RelieveStress', 25)
-                QBCore.Functions.Notify("You have a bit less stress", "success") 
-                exports['ps-buffs']:AddStressBuff(40000, 5)				
-                ClearPedTasks(PlayerPedId())
+		ClearPedTasks(PlayerPedId())					
+		--TriggerServerEvent('hud:server:RelieveStress', 25) 
+                exports['ps-buffs']:AddStressBuff(40000, 5)
+		QBCore.Functions.Notify("You have a bit less stress", "success")					
             else
 		ClearPedTasks(PlayerPedId())
                 QBCore.Functions.Notify("Just Breathe.....", "error") 
