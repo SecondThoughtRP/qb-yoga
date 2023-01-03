@@ -28,7 +28,7 @@ RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
     end)
 end)
 
-exports['qb-target']:AddTargetModel({-1978741854, 2057317573, -232023078}, {
+exports['qb-target']:AddTargetModel({876225403, -1978741854, 900603612, 2057317573, -232023078, -2137918589}, {
     options = {
         {
             type = "client",
