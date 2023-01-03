@@ -1,7 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-----------
---IsSoda--
-----------
+
 RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
     local ped = PlayerPedId()
     local coords = GetEntityCoords(ped)
@@ -32,7 +30,7 @@ RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
     end)
 end)
 
-exports['qb-target']:AddTargetModel({-1978741854, 2057317573, -232023078}, { --Yoga mats
+exports['qb-target']:AddTargetModel({-1978741854, 2057317573, -232023078}, {
     options = {
         {
             type = "client",
