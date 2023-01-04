@@ -22,9 +22,6 @@ ps-buffs https://github.com/Project-Sloth/ps-buffs
 
 ps-hud (For the buffs) https://github.com/Project-Sloth/ps-hud
 
-ps-objectspawner (for more yoga mats) https://github.com/Project-Sloth/ps-objectspawner
-
-
 Credits: 
 
 LumioStudio (As I used as a base and added ps-ui and ps-buffs into.)
