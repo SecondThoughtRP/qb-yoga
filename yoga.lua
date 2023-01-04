@@ -1,5 +1,30 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+local Objects = {
+    { ["x"] = -570.75, ["y"] = -1081.83, ["z"] = 21.33, ["h"] = 303.38, ["model"] = "p_yoga_mat_02_s" },--UWU
+    { ["x"] = -573.56, ["y"] = -1083.28, ["z"] = 21.33, ["h"] = 303.38, ["model"] = "p_yoga_mat_03_s" },--UWU
+    { ["x"] = -491.64, ["y"] = -219.06, ["z"] = 35.51, ["h"] = 205.68, ["model"] = "p_yoga_mat_02_s" },--CityHall
+    { ["x"] = -489.5, ["y"] = -221.44, ["z"] = 35.44, ["h"] = 205.68, ["model"] = "p_yoga_mat_01_s" }--CityHall
+}
+
+CreateThread(function()
+    for i = 1, #Objects, 1 do
+        while not HasModelLoaded(GetHashKey(Objects[i]["model"])) do
+            RequestModel(GetHashKey(Objects[i]["model"]))
+
+            Wait(5)
+        end
+
+        Objects[i]["objectId"] = CreateObject(GetHashKey(Objects[i]["model"]), Objects[i]["x"], Objects[i]["y"], Objects[i]["z"], false)
+
+        PlaceObjectOnGroundProperly(Objects[i]["objectId"])
+        SetEntityHeading(Objects[i]["objectId"], Objects[i]["h"])
+        FreezeEntityPosition(Objects[i]["objectId"], true)
+        SetEntityAsMissionEntity(Objects[i]["objectId"], true, true)
+    end
+    print("Placed Yoga Mats!")
+end)
+
 RegisterNetEvent('qb-smallresources:client:Namaste', function(src)
     QBCore.Functions.Progressbar('doing_yoga', 'Doing Yoga', 15000, false, false, {
         disableMovement = true,
